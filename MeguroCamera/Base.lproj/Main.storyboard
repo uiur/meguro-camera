@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="VisionDetection" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DJU-kI-TMg" customClass="PreviewView" customModule="VisionDetection" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="8R0-HU-s02" appends="YES" id="ckL-xg-qG7"/>
+                                </connections>
+                            </view>
+                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M5Z-8I-bc1">
+                                <rect key="frame" x="-0.5" y="-0.5" width="375" height="667"/>
+                                <subviews>
+                                    <imageView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tF1-9W-VvR">
+                                        <rect key="frame" x="-0.5" y="-0.5" width="375" height="667"/>
+                                        <color key="backgroundColor" red="0.1621779169" green="0.85931131110000003" blue="0.51659005189999996" alpha="1" colorSpace="calibratedRGB"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oLv-XZ-Drr">
+                                        <rect key="frame" x="163.5" y="611" width="47" height="36"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                        <state key="normal" title="Save">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="saveButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aEY-U2-5s9"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sLO-0v-gNI">
+                                        <rect key="frame" x="10" y="10" width="30" height="41"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                        <color key="tintColor" red="1" green="0.42616901529700235" blue="0.67898202704120747" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="✕">
+                                            <color key="titleColor" red="0.98030153435272316" green="1" blue="0.98357550479330702" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="titleShadowColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="closeTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eOM-zn-829"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="tF1-9W-VvR" firstAttribute="width" secondItem="M5Z-8I-bc1" secondAttribute="width" id="C9d-XP-AuJ"/>
+                                    <constraint firstItem="tF1-9W-VvR" firstAttribute="centerY" secondItem="M5Z-8I-bc1" secondAttribute="centerY" id="DQ2-eo-3Qd"/>
+                                    <constraint firstItem="sLO-0v-gNI" firstAttribute="top" secondItem="M5Z-8I-bc1" secondAttribute="top" constant="10" id="DrZ-VZ-acu"/>
+                                    <constraint firstItem="sLO-0v-gNI" firstAttribute="leading" secondItem="M5Z-8I-bc1" secondAttribute="leading" constant="10" id="Get-f4-K3f"/>
+                                    <constraint firstAttribute="bottom" secondItem="oLv-XZ-Drr" secondAttribute="bottom" constant="20" id="XpP-8M-xna"/>
+                                    <constraint firstItem="tF1-9W-VvR" firstAttribute="centerX" secondItem="M5Z-8I-bc1" secondAttribute="centerX" id="eQG-3e-Zgt"/>
+                                    <constraint firstItem="tF1-9W-VvR" firstAttribute="height" secondItem="M5Z-8I-bc1" secondAttribute="height" id="tip-bG-8Te"/>
+                                    <constraint firstItem="oLv-XZ-Drr" firstAttribute="centerX" secondItem="M5Z-8I-bc1" secondAttribute="centerX" id="zqN-77-rE2"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="M5Z-8I-bc1" firstAttribute="centerX" secondItem="HBb-gv-UwY" secondAttribute="centerX" id="AGT-G6-GwE"/>
+                            <constraint firstItem="M5Z-8I-bc1" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="KYn-ve-aHG"/>
+                            <constraint firstItem="M5Z-8I-bc1" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="eSt-rA-oDU"/>
+                            <constraint firstItem="M5Z-8I-bc1" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="eic-3g-Bbd"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="HBb-gv-UwY"/>
+                    </view>
+                    <connections>
+                        <outlet property="imageContainerView" destination="M5Z-8I-bc1" id="Wuh-fD-2Ud"/>
+                        <outlet property="imageView" destination="tF1-9W-VvR" id="eG7-yQ-UcJ"/>
+                        <outlet property="previewView" destination="DJU-kI-TMg" id="0gd-Nq-oNQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="8R0-HU-s02">
+                    <connections>
+                        <action selector="screenTapped:" destination="BYZ-38-t0r" id="vdY-ZC-wP5"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="138.98050974512745"/>
+        </scene>
+    </scenes>
+</document>
