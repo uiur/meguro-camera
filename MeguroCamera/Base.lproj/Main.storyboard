@@ -7,6 +7,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -33,37 +34,107 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aXo-07-wwF">
                                 <rect key="frame" x="0.0" y="520" width="375" height="147"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pEn-ee-nyq">
-                                        <rect key="frame" x="137" y="23" width="100" height="100"/>
-                                        <color key="backgroundColor" red="0.34901960784313724" green="0.34901960784313724" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rU7-r1-U1q">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="147"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pEn-ee-nyq">
+                                                <rect key="frame" x="138" y="24" width="100" height="100"/>
+                                                <color key="backgroundColor" red="0.34901960784313724" green="0.34901960784313724" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="100" id="SF8-mQ-xBR"/>
+                                                    <constraint firstAttribute="height" constant="100" id="xf1-O0-VVF"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="50"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="shotButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xzA-d5-pez"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="100" id="SF8-mQ-xBR"/>
-                                            <constraint firstAttribute="height" constant="100" id="xf1-O0-VVF"/>
+                                            <constraint firstItem="pEn-ee-nyq" firstAttribute="centerY" secondItem="rU7-r1-U1q" secondAttribute="centerY" id="WA4-z7-o3u"/>
+                                            <constraint firstItem="pEn-ee-nyq" firstAttribute="centerX" secondItem="rU7-r1-U1q" secondAttribute="centerX" id="g5W-dA-wr4"/>
                                         </constraints>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                <integer key="value" value="50"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <action selector="shotButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xzA-d5-pez"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dvk-Bm-K2L">
-                                        <rect key="frame" x="50" y="47.5" width="30" height="51"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="32"/>
-                                        <state key="normal" title="✕"/>
-                                        <connections>
-                                            <action selector="cancelButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="h1y-oo-bGC"/>
-                                        </connections>
-                                    </button>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Hg-g4-GuW">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="147"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="oX4-71-R5W">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="147"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TkM-eT-l5m">
+                                                        <rect key="frame" x="0.0" y="0.0" width="183.5" height="147"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dvk-Bm-K2L">
+                                                                <rect key="frame" x="77" y="48" width="30" height="51"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                                                <state key="normal" title="✕"/>
+                                                                <connections>
+                                                                    <action selector="cancelButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="b08-wJ-fWY"/>
+                                                                </connections>
+                                                            </button>
+                                                        </subviews>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstItem="Dvk-Bm-K2L" firstAttribute="centerX" secondItem="TkM-eT-l5m" secondAttribute="centerX" id="g6F-p3-RrJ"/>
+                                                            <constraint firstItem="Dvk-Bm-K2L" firstAttribute="centerY" secondItem="TkM-eT-l5m" secondAttribute="centerY" id="tO1-2Y-Bc0"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gu6-6C-9bb">
+                                                        <rect key="frame" x="191.5" y="0.0" width="183.5" height="147"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LE9-k8-nZD">
+                                                                <rect key="frame" x="62" y="43" width="60" height="60"/>
+                                                                <color key="backgroundColor" red="0.34901960784313724" green="0.34901960784313724" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="60" id="SpJ-Rg-55G"/>
+                                                                    <constraint firstAttribute="height" constant="60" id="zJ2-cc-iz3"/>
+                                                                </constraints>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                        <integer key="value" value="30"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <action selector="saveButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NGy-cP-5LU"/>
+                                                                </connections>
+                                                            </button>
+                                                        </subviews>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstItem="LE9-k8-nZD" firstAttribute="centerY" secondItem="Gu6-6C-9bb" secondAttribute="centerY" id="4mw-bh-3lD"/>
+                                                            <constraint firstItem="LE9-k8-nZD" firstAttribute="centerX" secondItem="Gu6-6C-9bb" secondAttribute="centerX" id="iZ5-De-thm"/>
+                                                        </constraints>
+                                                    </view>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="Gu6-6C-9bb" firstAttribute="height" secondItem="oX4-71-R5W" secondAttribute="height" id="GXg-pR-wWf"/>
+                                                    <constraint firstItem="TkM-eT-l5m" firstAttribute="height" secondItem="oX4-71-R5W" secondAttribute="height" id="lGS-Ti-RJj"/>
+                                                </constraints>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="oX4-71-R5W" firstAttribute="height" secondItem="2Hg-g4-GuW" secondAttribute="height" id="AGP-Nd-g1V"/>
+                                            <constraint firstItem="oX4-71-R5W" firstAttribute="leading" secondItem="2Hg-g4-GuW" secondAttribute="leading" id="VRl-Bn-zkM"/>
+                                            <constraint firstItem="oX4-71-R5W" firstAttribute="width" secondItem="2Hg-g4-GuW" secondAttribute="width" id="umb-ii-hFT"/>
+                                            <constraint firstItem="oX4-71-R5W" firstAttribute="centerY" secondItem="2Hg-g4-GuW" secondAttribute="centerY" id="vgW-hC-rTE"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" red="0.97254901960784312" green="0.97254901960784312" blue="0.97254901960784312" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstItem="pEn-ee-nyq" firstAttribute="centerY" secondItem="aXo-07-wwF" secondAttribute="centerY" id="Qh3-7Q-V47"/>
-                                    <constraint firstItem="pEn-ee-nyq" firstAttribute="centerX" secondItem="aXo-07-wwF" secondAttribute="centerX" id="gDl-o3-9tc"/>
-                                    <constraint firstItem="Dvk-Bm-K2L" firstAttribute="leading" secondItem="aXo-07-wwF" secondAttribute="leading" constant="50" id="pk5-eV-QaW"/>
-                                    <constraint firstItem="Dvk-Bm-K2L" firstAttribute="centerY" secondItem="aXo-07-wwF" secondAttribute="centerY" id="s4U-P3-onW"/>
+                                    <constraint firstItem="2Hg-g4-GuW" firstAttribute="centerY" secondItem="aXo-07-wwF" secondAttribute="centerY" id="90k-JF-89u"/>
+                                    <constraint firstItem="2Hg-g4-GuW" firstAttribute="centerX" secondItem="aXo-07-wwF" secondAttribute="centerX" id="B0Q-p1-KYe"/>
+                                    <constraint firstItem="rU7-r1-U1q" firstAttribute="height" secondItem="aXo-07-wwF" secondAttribute="height" id="CXn-Fh-Vcx"/>
+                                    <constraint firstItem="rU7-r1-U1q" firstAttribute="width" secondItem="aXo-07-wwF" secondAttribute="width" id="LhL-dt-Nd1"/>
+                                    <constraint firstItem="2Hg-g4-GuW" firstAttribute="height" secondItem="aXo-07-wwF" secondAttribute="height" id="Pkg-C2-M0S"/>
+                                    <constraint firstItem="2Hg-g4-GuW" firstAttribute="width" secondItem="aXo-07-wwF" secondAttribute="width" id="UMl-f0-cXX"/>
+                                    <constraint firstItem="rU7-r1-U1q" firstAttribute="centerY" secondItem="aXo-07-wwF" secondAttribute="centerY" id="uGp-0d-71Z"/>
+                                    <constraint firstItem="rU7-r1-U1q" firstAttribute="centerX" secondItem="aXo-07-wwF" secondAttribute="centerX" id="y0q-7s-jkg"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M5Z-8I-bc1">
@@ -98,22 +169,23 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="DJU-kI-TMg" firstAttribute="centerX" secondItem="aXo-07-wwF" secondAttribute="centerX" id="5gg-RT-0Q1"/>
                             <constraint firstItem="M5Z-8I-bc1" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="AGT-G6-GwE"/>
+                            <constraint firstItem="DJU-kI-TMg" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="EiS-X7-5mu"/>
                             <constraint firstItem="M5Z-8I-bc1" firstAttribute="top" secondItem="wQU-lG-6Oe" secondAttribute="bottom" id="FAP-QD-bbI"/>
                             <constraint firstItem="DJU-kI-TMg" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="OIc-R6-q3i"/>
                             <constraint firstItem="aXo-07-wwF" firstAttribute="bottom" secondItem="tWG-Dc-Sng" secondAttribute="top" id="P10-G4-qRg"/>
-                            <constraint firstItem="aXo-07-wwF" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="UsE-c0-btW"/>
                             <constraint firstItem="aXo-07-wwF" firstAttribute="top" secondItem="DJU-kI-TMg" secondAttribute="bottom" id="VSm-gw-qs4"/>
                             <constraint firstItem="M5Z-8I-bc1" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="eSt-rA-oDU"/>
                             <constraint firstItem="DJU-kI-TMg" firstAttribute="top" secondItem="wQU-lG-6Oe" secondAttribute="bottom" id="ekE-4N-abe"/>
                             <constraint firstItem="aXo-07-wwF" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="noy-u4-3Er"/>
+                            <constraint firstItem="aXo-07-wwF" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="rz4-f8-Wh3"/>
                         </constraints>
                     </view>
                     <nil key="simulatedTopBarMetrics"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="cancelButton" destination="Dvk-Bm-K2L" id="HFH-Nt-EY2"/>
+                        <outlet property="captureControlView" destination="rU7-r1-U1q" id="x4Q-kH-ajf"/>
+                        <outlet property="editControlView" destination="2Hg-g4-GuW" id="fFt-ZE-HBd"/>
                         <outlet property="imageContainerView" destination="M5Z-8I-bc1" id="Wuh-fD-2Ud"/>
                         <outlet property="imageView" destination="tF1-9W-VvR" id="eG7-yQ-UcJ"/>
                         <outlet property="previewView" destination="DJU-kI-TMg" id="0gd-Nq-oNQ"/>

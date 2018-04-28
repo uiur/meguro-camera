@@ -31,7 +31,9 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var imageContainerView: UIView!
     @IBOutlet weak var imageView: UIImageView!
-    @IBOutlet weak var cancelButton: UIButton!
+
+    @IBOutlet weak var shotControlView: UIView!
+    @IBOutlet weak var editControlView: UIView!
 
     @IBAction func cancelButtonTapped(_ sender: UIButton) {
         finishEditView()
@@ -44,18 +46,23 @@ class ViewController: UIViewController {
         )
     }
 
+    @IBOutlet weak var captureControlView: UIView!
     func showEditView(image: UIImage) {
         imageView.image = image
         imageContainerView.isHidden = false
-        cancelButton.isHidden = false
+
+        captureControlView.isHidden = true
+        editControlView.isHidden = false
     }
 
     private func finishEditView() {
         imageContainerView.isHidden = true
-        cancelButton.isHidden = true
+        
+        captureControlView.isHidden = false
+        editControlView.isHidden = true
     }
 
-    @IBAction func saveButtonClicked(_ sender: UIButton) {
+    @IBAction func saveButtonTapped(_ sender: UIButton) {
         guard let image = imageView.image else { return }
         guard let jpg = UIImageJPEGRepresentation(image, 1) else { return }
 
