@@ -68,7 +68,7 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TkM-eT-l5m">
                                                         <rect key="frame" x="0.0" y="0.0" width="183.5" height="147"/>
                                                         <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dvk-Bm-K2L">
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dvk-Bm-K2L">
                                                                 <rect key="frame" x="77" y="48" width="30" height="51"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                                                 <state key="normal" title="✕"/>
@@ -144,26 +144,14 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="500"/>
                                         <color key="backgroundColor" red="0.1621779169" green="0.85931131110000003" blue="0.51659005189999996" alpha="1" colorSpace="calibratedRGB"/>
                                     </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oLv-XZ-Drr">
-                                        <rect key="frame" x="164" y="444" width="47" height="36"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                        <state key="normal" title="Save">
-                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="saveButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aEY-U2-5s9"/>
-                                        </connections>
-                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="tF1-9W-VvR" firstAttribute="width" secondItem="M5Z-8I-bc1" secondAttribute="width" id="C9d-XP-AuJ"/>
-                                    <constraint firstAttribute="bottom" secondItem="oLv-XZ-Drr" secondAttribute="bottom" constant="20" id="XpP-8M-xna"/>
                                     <constraint firstItem="tF1-9W-VvR" firstAttribute="centerX" secondItem="M5Z-8I-bc1" secondAttribute="centerX" id="eQG-3e-Zgt"/>
                                     <constraint firstAttribute="width" secondItem="M5Z-8I-bc1" secondAttribute="height" multiplier="3:4" id="g5O-pF-xKA"/>
                                     <constraint firstItem="tF1-9W-VvR" firstAttribute="centerY" secondItem="M5Z-8I-bc1" secondAttribute="centerY" id="hma-FO-TLK"/>
                                     <constraint firstItem="tF1-9W-VvR" firstAttribute="height" secondItem="M5Z-8I-bc1" secondAttribute="height" id="uiK-Le-OZ0"/>
-                                    <constraint firstItem="oLv-XZ-Drr" firstAttribute="centerX" secondItem="M5Z-8I-bc1" secondAttribute="centerX" id="zqN-77-rE2"/>
                                 </constraints>
                             </view>
                         </subviews>

@@ -32,7 +32,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var imageContainerView: UIView!
     @IBOutlet weak var imageView: UIImageView!
 
-    @IBOutlet weak var shotControlView: UIView!
+    @IBOutlet weak var captureControlView: UIView!
     @IBOutlet weak var editControlView: UIView!
 
     @IBAction func cancelButtonTapped(_ sender: UIButton) {
@@ -46,7 +46,6 @@ class ViewController: UIViewController {
         )
     }
 
-    @IBOutlet weak var captureControlView: UIView!
     func showEditView(image: UIImage) {
         imageView.image = image
         imageContainerView.isHidden = false
