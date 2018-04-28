@@ -4,18 +4,55 @@ import Vision
 import Photos
 
 class ViewController: UIViewController {
-    @IBOutlet weak var imageContainerView: UIView!
+    // MARK: Session Management
 
-    @IBAction func closeTapped(_ sender: UIButton) {
-        imageContainerView.isHidden = true
+    private enum SessionSetupResult {
+        case success
+        case notAuthorized
+        case configurationFailed
     }
+
+    private var devicePosition: AVCaptureDevice.Position = .front
+
+    private let session = AVCaptureSession()
+    private var isSessionRunning = false
+
+    private let sessionQueue = DispatchQueue(label: "session queue", attributes: [], target: nil) // Communicate with the session and other session objects on this queue.
+
+    private var setupResult: SessionSetupResult = .success
+
+    private var videoDeviceInput: AVCaptureDeviceInput!
+
+    private var videoDataOutput: AVCaptureVideoDataOutput!
+    private var videoDataOutputQueue = DispatchQueue(label: "VideoDataOutputQueue")
+    private var photoOutput: AVCapturePhotoOutput!
+
+    private var requests = [VNRequest]()
+
+    @IBOutlet weak var imageContainerView: UIView!
     @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var cancelButton: UIButton!
+
+    @IBAction func cancelButtonTapped(_ sender: UIButton) {
+        finishEditView()
+    }
 
     @IBAction func shotButtonTapped(_ sender: UIButton) {
         photoOutput.capturePhoto(
             with: AVCapturePhotoSettings(format: [AVVideoCodecKey: AVVideoCodecJPEG]),
             delegate: self
         )
+    }
+
+    func showEditView(image: UIImage) {
+        imageView.image = image
+        imageContainerView.isHidden = false
+        cancelButton.isHidden = false
+    }
+
+    private func finishEditView() {
+        imageContainerView.isHidden = true
+        cancelButton.isHidden = true
     }
 
     @IBAction func saveButtonClicked(_ sender: UIButton) {
@@ -50,7 +87,6 @@ class ViewController: UIViewController {
             self.present(alertController, animated: true, completion: nil)
         }
     }
-
 
 
     private func saveToLibrary(data: Data, handler: @escaping (Bool, Error?) -> Void) {
@@ -112,7 +148,7 @@ class ViewController: UIViewController {
             self.configureSession()
         }
 
-        imageContainerView.isHidden = true
+        finishEditView() // to hide control
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -163,32 +199,7 @@ class ViewController: UIViewController {
     }
     
     @IBOutlet weak var previewView: PreviewView!
-    
-    // MARK: Session Management
-    
-    private enum SessionSetupResult {
-        case success
-        case notAuthorized
-        case configurationFailed
-    }
-    
-    private var devicePosition: AVCaptureDevice.Position = .front
-    
-    private let session = AVCaptureSession()
-    private var isSessionRunning = false
-    
-    private let sessionQueue = DispatchQueue(label: "session queue", attributes: [], target: nil) // Communicate with the session and other session objects on this queue.
-    
-    private var setupResult: SessionSetupResult = .success
-    
-    private var videoDeviceInput: AVCaptureDeviceInput!
 
-    private var videoDataOutput: AVCaptureVideoDataOutput!
-    private var videoDataOutputQueue = DispatchQueue(label: "VideoDataOutputQueue")
-    private var photoOutput: AVCapturePhotoOutput!
-    
-    private var requests = [VNRequest]()
-    
     private func configureSession() {
         if self.setupResult != .success {
             return
@@ -434,9 +445,8 @@ extension ViewController: AVCapturePhotoCaptureDelegate {
             }
             
             let result = UIGraphicsGetImageFromCurrentImageContext()!
-            
-            self.imageView.image = result.withHorizontallyFlippedOrientation()
-            self.imageContainerView.isHidden = false
+            self.showEditView(image: result.withHorizontallyFlippedOrientation())
+
             UIGraphicsEndImageContext()
         }
         

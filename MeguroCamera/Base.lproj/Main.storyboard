@@ -49,11 +49,21 @@
                                             <action selector="shotButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xzA-d5-pez"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dvk-Bm-K2L">
+                                        <rect key="frame" x="50" y="47.5" width="30" height="51"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                        <state key="normal" title="✕"/>
+                                        <connections>
+                                            <action selector="cancelButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="h1y-oo-bGC"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.97254901960784312" green="0.97254901960784312" blue="0.97254901960784312" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="pEn-ee-nyq" firstAttribute="centerY" secondItem="aXo-07-wwF" secondAttribute="centerY" id="Qh3-7Q-V47"/>
                                     <constraint firstItem="pEn-ee-nyq" firstAttribute="centerX" secondItem="aXo-07-wwF" secondAttribute="centerX" id="gDl-o3-9tc"/>
+                                    <constraint firstItem="Dvk-Bm-K2L" firstAttribute="leading" secondItem="aXo-07-wwF" secondAttribute="leading" constant="50" id="pk5-eV-QaW"/>
+                                    <constraint firstItem="Dvk-Bm-K2L" firstAttribute="centerY" secondItem="aXo-07-wwF" secondAttribute="centerY" id="s4U-P3-onW"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M5Z-8I-bc1">
@@ -73,24 +83,10 @@
                                             <action selector="saveButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aEY-U2-5s9"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sLO-0v-gNI">
-                                        <rect key="frame" x="10" y="10" width="30" height="41"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                        <color key="tintColor" red="1" green="0.42616901529700235" blue="0.67898202704120747" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <state key="normal" title="✕">
-                                            <color key="titleColor" red="0.98030153435272316" green="1" blue="0.98357550479330702" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <color key="titleShadowColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="closeTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eOM-zn-829"/>
-                                        </connections>
-                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="tF1-9W-VvR" firstAttribute="width" secondItem="M5Z-8I-bc1" secondAttribute="width" id="C9d-XP-AuJ"/>
-                                    <constraint firstItem="sLO-0v-gNI" firstAttribute="top" secondItem="M5Z-8I-bc1" secondAttribute="top" constant="10" id="DrZ-VZ-acu"/>
-                                    <constraint firstItem="sLO-0v-gNI" firstAttribute="leading" secondItem="M5Z-8I-bc1" secondAttribute="leading" constant="10" id="Get-f4-K3f"/>
                                     <constraint firstAttribute="bottom" secondItem="oLv-XZ-Drr" secondAttribute="bottom" constant="20" id="XpP-8M-xna"/>
                                     <constraint firstItem="tF1-9W-VvR" firstAttribute="centerX" secondItem="M5Z-8I-bc1" secondAttribute="centerX" id="eQG-3e-Zgt"/>
                                     <constraint firstAttribute="width" secondItem="M5Z-8I-bc1" secondAttribute="height" multiplier="3:4" id="g5O-pF-xKA"/>
@@ -117,6 +113,7 @@
                     <nil key="simulatedTopBarMetrics"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="cancelButton" destination="Dvk-Bm-K2L" id="HFH-Nt-EY2"/>
                         <outlet property="imageContainerView" destination="M5Z-8I-bc1" id="Wuh-fD-2Ud"/>
                         <outlet property="imageView" destination="tF1-9W-VvR" id="eG7-yQ-UcJ"/>
                         <outlet property="previewView" destination="DJU-kI-TMg" id="0gd-Nq-oNQ"/>
