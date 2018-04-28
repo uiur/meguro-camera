@@ -10,7 +10,8 @@ class ViewController: UIViewController {
         imageContainerView.isHidden = true
     }
     @IBOutlet weak var imageView: UIImageView!
-    @IBAction func screenTapped(_ sender: UITapGestureRecognizer) {
+
+    @IBAction func shotButtonTapped(_ sender: UIButton) {
         photoOutput.capturePhoto(
             with: AVCapturePhotoSettings(format: [AVVideoCodecKey: AVVideoCodecJPEG]),
             delegate: self
@@ -194,7 +195,8 @@ class ViewController: UIViewController {
         }
         
         session.beginConfiguration()
-        session.sessionPreset = .high
+        // .photo?
+        session.sessionPreset = .photo
         
         // Add video input.
         do {
@@ -234,6 +236,7 @@ class ViewController: UIViewController {
         videoDataOutput.videoSettings = [(kCVPixelBufferPixelFormatTypeKey as String): Int(kCVPixelFormatType_32BGRA)]
 
         photoOutput = AVCapturePhotoOutput()
+        photoOutput.isHighResolutionCaptureEnabled = true
         session.addOutput(photoOutput)
         
         if session.canAddOutput(videoDataOutput) {
