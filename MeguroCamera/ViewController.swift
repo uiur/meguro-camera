@@ -39,11 +39,31 @@ class ViewController: UIViewController {
         finishEditView()
     }
 
+    @IBAction func shotButtonTouchedDown(_ sender: UIButton) {
+        UIView.animate(
+            withDuration: 0.08,
+            delay: 0,
+            options: .curveEaseOut,
+            animations: {
+                self.captureControlView.transform = CGAffineTransform.identity.scaledBy(x: 0.9, y: 0.9)
+            }, completion: nil)
+    }
+
     @IBAction func shotButtonTapped(_ sender: UIButton) {
+        UIView.animate(withDuration: 0.08, animations: {
+            self.captureControlView.transform = CGAffineTransform.identity.scaledBy(x: 1, y: 1)
+        })
+
         photoOutput.capturePhoto(
             with: AVCapturePhotoSettings(format: [AVVideoCodecKey: AVVideoCodecJPEG]),
             delegate: self
         )
+    }
+
+    @IBAction func shotButtonTouchedUpOutside(_ sender: UIButton) {
+        UIView.animate(withDuration: 0.08, animations: {
+            self.captureControlView.transform = CGAffineTransform.identity.scaledBy(x: 1, y: 1)
+        })
     }
 
     func showEditView(image: UIImage) {

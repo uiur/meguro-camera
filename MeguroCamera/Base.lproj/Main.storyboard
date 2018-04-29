@@ -50,6 +50,8 @@
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="shotButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xzA-d5-pez"/>
+                                                    <action selector="shotButtonTouchedDown:" destination="BYZ-38-t0r" eventType="touchDown" id="TJf-Ud-vl8"/>
+                                                    <action selector="shotButtonTouchedUpOutside:" destination="BYZ-38-t0r" eventType="touchUpOutside" id="Cyc-LI-OAK"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -58,7 +60,7 @@
                                             <constraint firstItem="pEn-ee-nyq" firstAttribute="centerX" secondItem="rU7-r1-U1q" secondAttribute="centerX" id="g5W-dA-wr4"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Hg-g4-GuW">
+                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Hg-g4-GuW">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="147"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="oX4-71-R5W">
