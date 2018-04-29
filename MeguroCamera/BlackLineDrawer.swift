@@ -2,25 +2,24 @@ import UIKit
 import Vision
 
 class BlackLineDrawer {
-    class func gravity(faceLandmarkRegion: VNFaceLandmarkRegion2D) -> CGPoint {
+    class func gravity(points: [CGPoint]) -> CGPoint {
         var x: CGFloat = 0.0
         var y: CGFloat = 0.0
 
-        for i in 0..<faceLandmarkRegion.pointCount {
-            let point = faceLandmarkRegion.normalizedPoints[i]
+        for point in points {
             x += point.x
             y += point.y
         }
 
         return CGPoint(
-            x: x / CGFloat(faceLandmarkRegion.pointCount),
-            y: y / CGFloat(faceLandmarkRegion.pointCount)
+            x: x / CGFloat(points.count),
+            y: y / CGFloat(points.count)
         )
     }
 
-    class func draw(leftEyeRegion: VNFaceLandmarkRegion2D, rightEyeRegion: VNFaceLandmarkRegion2D) -> CALayer {
-        let leftEyePoint = gravity(faceLandmarkRegion: leftEyeRegion)
-        let rightEyePoint = gravity(faceLandmarkRegion: rightEyeRegion)
+    class func draw(leftEyeRegion: [CGPoint], rightEyeRegion: [CGPoint]) -> CALayer {
+        let leftEyePoint = gravity(points: leftEyeRegion)
+        let rightEyePoint = gravity(points: rightEyeRegion)
 
         let left = CGPoint(
             x: leftEyePoint.x - 0.4 * (rightEyePoint.x - leftEyePoint.x),

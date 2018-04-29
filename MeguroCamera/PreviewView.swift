@@ -66,7 +66,10 @@ class PreviewView: UIView {
     }
 
     func drawBlackLineLayer(rect: CGRect, face: VNFaceObservation) -> CALayer {
-        let landmarkLayer = BlackLineDrawer.draw(leftEyeRegion: (face.landmarks?.leftEye)!, rightEyeRegion: (face.landmarks?.rightEye)!)
+        let landmarkLayer = BlackLineDrawer.draw(
+            leftEyeRegion: (face.landmarks?.leftEye?.normalizedPoints)!,
+            rightEyeRegion: (face.landmarks?.rightEye?.normalizedPoints)!
+        )
 
         landmarkLayer.transform = CATransform3DMakeAffineTransform(
             CGAffineTransform.identity
