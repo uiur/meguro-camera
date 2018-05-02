@@ -21,16 +21,29 @@ class BlackLineDrawer {
         let leftEyePoint = gravity(points: leftEyeRegion)
         let rightEyePoint = gravity(points: rightEyeRegion)
 
+        let leftEdgePoint = leftEyeRegion.min(by: { (a, b) in a.x < b.x })!
+        let rightEdgePoint = rightEyeRegion.max(by: { (a, b) in a.x < b.x })!
+
+        let edgeDistance = distance(a: leftEdgePoint, b: rightEdgePoint)
+        let centerDistance = distance(a: leftEyePoint, b: rightEyePoint)
+        let ratio = (edgeDistance - centerDistance) / centerDistance
+
+
         let left = CGPoint(
-            x: leftEyePoint.x - 0.4 * (rightEyePoint.x - leftEyePoint.x),
-            y: leftEyePoint.y - 0.4 * (rightEyePoint.y - leftEyePoint.y)
+            x: leftEyePoint.x - ratio * (rightEyePoint.x - leftEyePoint.x),
+            y: leftEyePoint.y - ratio * (rightEyePoint.y - leftEyePoint.y)
         )
         let right = CGPoint(
-            x: rightEyePoint.x + 0.4 * (rightEyePoint.x - leftEyePoint.x),
-            y: rightEyePoint.y + 0.4 * (rightEyePoint.y - leftEyePoint.y)
+            x: rightEyePoint.x + ratio * (rightEyePoint.x - leftEyePoint.x),
+            y: rightEyePoint.y + ratio * (rightEyePoint.y - leftEyePoint.y)
         )
 
         return drawLine(landmarkPoints: [left, right])
+    }
+
+
+    class func distance(a: CGPoint, b: CGPoint) -> CGFloat {
+        return sqrt(pow(a.x - b.x, 2) + pow(a.y - b.y, 2))
     }
 
     class func drawLine(landmarkPoints: [CGPoint]) -> CALayer {
