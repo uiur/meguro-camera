@@ -34,7 +34,8 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var captureControlView: UIView!
     @IBOutlet weak var editControlView: UIView!
-
+    @IBOutlet weak var captureButton: UIButton!
+    
     @IBAction func cancelButtonTapped(_ sender: UIButton) {
         finishEditView()
     }
@@ -45,7 +46,7 @@ class ViewController: UIViewController {
             delay: 0,
             options: .curveEaseOut,
             animations: {
-                self.captureControlView.transform = CGAffineTransform.identity.scaledBy(x: 0.9, y: 0.9)
+                self.captureButton.transform = CGAffineTransform.identity.scaledBy(x: 0.9, y: 0.9)
             }, completion: nil)
     }
 
@@ -62,10 +63,7 @@ class ViewController: UIViewController {
     }
 
     @IBAction func shotButtonTapped(_ sender: UIButton) {
-        UIView.animate(withDuration: 0.08, animations: {
-            self.captureControlView.transform = CGAffineTransform.identity.scaledBy(x: 1, y: 1)
-        })
-
+        finishCaptureButtonAnimation()
         photoOutput.capturePhoto(
             with: AVCapturePhotoSettings(format: [AVVideoCodecKey: AVVideoCodecJPEG]),
             delegate: self
@@ -73,8 +71,12 @@ class ViewController: UIViewController {
     }
 
     @IBAction func shotButtonTouchedUpOutside(_ sender: UIButton) {
+        finishCaptureButtonAnimation()
+    }
+
+    private func finishCaptureButtonAnimation() {
         UIView.animate(withDuration: 0.08, animations: {
-            self.captureControlView.transform = CGAffineTransform.identity.scaledBy(x: 1, y: 1)
+            self.captureButton.transform = CGAffineTransform.identity.scaledBy(x: 1, y: 1)
         })
     }
 

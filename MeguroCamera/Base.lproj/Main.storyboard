@@ -222,6 +222,7 @@
                     <nil key="simulatedTopBarMetrics"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="captureButton" destination="pEn-ee-nyq" id="9OV-pk-qMP"/>
                         <outlet property="captureControlView" destination="rU7-r1-U1q" id="x4Q-kH-ajf"/>
                         <outlet property="editControlView" destination="2Hg-g4-GuW" id="fFt-ZE-HBd"/>
                         <outlet property="imageContainerView" destination="M5Z-8I-bc1" id="Wuh-fD-2Ud"/>
