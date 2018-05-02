@@ -36,38 +36,71 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rU7-r1-U1q">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="147"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pEn-ee-nyq">
-                                                <rect key="frame" x="138" y="24" width="100" height="100"/>
-                                                <color key="backgroundColor" red="0.34901960784313724" green="0.34901960784313724" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="IOj-Fo-EX2">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="147"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FgH-vO-hBS">
+                                                        <rect key="frame" x="0.0" y="9.5" width="125" height="128"/>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ckj-ys-62G">
+                                                        <rect key="frame" x="125" y="0.0" width="125" height="147"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pEn-ee-nyq">
+                                                                <rect key="frame" x="13" y="23.5" width="100" height="100"/>
+                                                                <color key="backgroundColor" red="0.34901960784313724" green="0.34901960784313724" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="100" id="SF8-mQ-xBR"/>
+                                                                    <constraint firstAttribute="height" constant="100" id="xf1-O0-VVF"/>
+                                                                </constraints>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                        <integer key="value" value="50"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <action selector="shotButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xzA-d5-pez"/>
+                                                                    <action selector="shotButtonTouchedDown:" destination="BYZ-38-t0r" eventType="touchDown" id="TJf-Ud-vl8"/>
+                                                                    <action selector="shotButtonTouchedUpOutside:" destination="BYZ-38-t0r" eventType="touchUpOutside" id="Cyc-LI-OAK"/>
+                                                                </connections>
+                                                            </button>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstItem="pEn-ee-nyq" firstAttribute="centerY" secondItem="Ckj-ys-62G" secondAttribute="centerY" id="5tH-Zz-mqo"/>
+                                                            <constraint firstItem="pEn-ee-nyq" firstAttribute="centerX" secondItem="Ckj-ys-62G" secondAttribute="centerX" id="qkA-ez-OR3"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MK2-st-KlH">
+                                                        <rect key="frame" x="250" y="0.0" width="125" height="147"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4hj-mh-5Hr">
+                                                                <rect key="frame" x="42.5" y="54" width="40" height="40"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="40" id="E9h-8N-w8q"/>
+                                                                    <constraint firstAttribute="width" secondItem="4hj-mh-5Hr" secondAttribute="height" multiplier="1:1" id="bnu-y0-zCV"/>
+                                                                </constraints>
+                                                                <state key="normal" image="iconmonstr-switch"/>
+                                                                <connections>
+                                                                    <action selector="switchCameraDevice:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jD6-DK-pJv"/>
+                                                                </connections>
+                                                            </button>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstItem="4hj-mh-5Hr" firstAttribute="centerX" secondItem="MK2-st-KlH" secondAttribute="centerX" id="FTj-de-VkR"/>
+                                                            <constraint firstItem="4hj-mh-5Hr" firstAttribute="centerY" secondItem="MK2-st-KlH" secondAttribute="centerY" id="HSh-T4-xD7"/>
+                                                        </constraints>
+                                                    </view>
+                                                </subviews>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="100" id="SF8-mQ-xBR"/>
-                                                    <constraint firstAttribute="height" constant="100" id="xf1-O0-VVF"/>
+                                                    <constraint firstItem="MK2-st-KlH" firstAttribute="height" secondItem="IOj-Fo-EX2" secondAttribute="height" id="4p5-4M-Vu8"/>
+                                                    <constraint firstItem="Ckj-ys-62G" firstAttribute="height" secondItem="IOj-Fo-EX2" secondAttribute="height" id="vFl-jK-0C2"/>
                                                 </constraints>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                        <integer key="value" value="50"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
-                                                <connections>
-                                                    <action selector="shotButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xzA-d5-pez"/>
-                                                    <action selector="shotButtonTouchedDown:" destination="BYZ-38-t0r" eventType="touchDown" id="TJf-Ud-vl8"/>
-                                                    <action selector="shotButtonTouchedUpOutside:" destination="BYZ-38-t0r" eventType="touchUpOutside" id="Cyc-LI-OAK"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4hj-mh-5Hr">
-                                                <rect key="frame" x="325" y="47.5" width="30" height="51"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
-                                                <state key="normal" title="○"/>
-                                                <connections>
-                                                    <action selector="switchCameraDevice:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jD6-DK-pJv"/>
-                                                </connections>
-                                            </button>
+                                            </stackView>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstItem="pEn-ee-nyq" firstAttribute="centerY" secondItem="rU7-r1-U1q" secondAttribute="centerY" id="WA4-z7-o3u"/>
-                                            <constraint firstItem="pEn-ee-nyq" firstAttribute="centerX" secondItem="rU7-r1-U1q" secondAttribute="centerX" id="g5W-dA-wr4"/>
-                                            <constraint firstAttribute="trailing" secondItem="4hj-mh-5Hr" secondAttribute="trailing" constant="20" id="iEa-Ur-Ytv"/>
-                                            <constraint firstItem="4hj-mh-5Hr" firstAttribute="centerY" secondItem="rU7-r1-U1q" secondAttribute="centerY" id="iUr-1b-63M"/>
+                                            <constraint firstItem="IOj-Fo-EX2" firstAttribute="width" secondItem="rU7-r1-U1q" secondAttribute="width" id="29v-x7-JKf"/>
+                                            <constraint firstItem="IOj-Fo-EX2" firstAttribute="centerX" secondItem="rU7-r1-U1q" secondAttribute="centerX" id="7rv-YZ-buV"/>
+                                            <constraint firstItem="IOj-Fo-EX2" firstAttribute="height" secondItem="rU7-r1-U1q" secondAttribute="height" id="PwC-4O-Sgd"/>
+                                            <constraint firstItem="IOj-Fo-EX2" firstAttribute="centerY" secondItem="rU7-r1-U1q" secondAttribute="centerY" id="QfI-7B-wRb"/>
                                         </constraints>
                                     </view>
                                     <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Hg-g4-GuW">
@@ -204,5 +237,6 @@
     <resources>
         <image name="iconmonstr-arrow" width="60" height="60"/>
         <image name="iconmonstr-down" width="60" height="60"/>
+        <image name="iconmonstr-switch" width="60" height="60"/>
     </resources>
 </document>

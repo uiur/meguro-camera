@@ -12,7 +12,7 @@ class ViewController: UIViewController {
         case configurationFailed
     }
 
-    private var devicePosition: AVCaptureDevice.Position = .back
+    private var devicePosition: AVCaptureDevice.Position = .front
 
     private let session = AVCaptureSession()
     private var isSessionRunning = false
@@ -424,7 +424,6 @@ extension ViewController {
             self.previewView.removeMask()
 
             for face in results {
-                print(face)
                 self.previewView.drawFaceWithLandmarks(face: face)
             }
         }
