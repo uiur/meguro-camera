@@ -54,10 +54,20 @@
                                                     <action selector="shotButtonTouchedUpOutside:" destination="BYZ-38-t0r" eventType="touchUpOutside" id="Cyc-LI-OAK"/>
                                                 </connections>
                                             </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4hj-mh-5Hr">
+                                                <rect key="frame" x="325" y="47.5" width="30" height="51"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                                <state key="normal" title="○"/>
+                                                <connections>
+                                                    <action selector="switchCameraDevice:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jD6-DK-pJv"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <constraints>
                                             <constraint firstItem="pEn-ee-nyq" firstAttribute="centerY" secondItem="rU7-r1-U1q" secondAttribute="centerY" id="WA4-z7-o3u"/>
                                             <constraint firstItem="pEn-ee-nyq" firstAttribute="centerX" secondItem="rU7-r1-U1q" secondAttribute="centerX" id="g5W-dA-wr4"/>
+                                            <constraint firstAttribute="trailing" secondItem="4hj-mh-5Hr" secondAttribute="trailing" constant="20" id="iEa-Ur-Ytv"/>
+                                            <constraint firstItem="4hj-mh-5Hr" firstAttribute="centerY" secondItem="rU7-r1-U1q" secondAttribute="centerY" id="iUr-1b-63M"/>
                                         </constraints>
                                     </view>
                                     <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Hg-g4-GuW">

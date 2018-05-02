@@ -12,7 +12,7 @@ class ViewController: UIViewController {
         case configurationFailed
     }
 
-    private var devicePosition: AVCaptureDevice.Position = .front
+    private var devicePosition: AVCaptureDevice.Position = .back
 
     private let session = AVCaptureSession()
     private var isSessionRunning = false
@@ -47,6 +47,18 @@ class ViewController: UIViewController {
             animations: {
                 self.captureControlView.transform = CGAffineTransform.identity.scaledBy(x: 0.9, y: 0.9)
             }, completion: nil)
+    }
+
+    @IBAction func switchCameraDevice(_ sender: UIButton) {
+        devicePosition = devicePosition == .front ? .back : .front
+
+        self.session.beginConfiguration()
+        self.session.removeInput(self.videoDeviceInput)
+
+        _ = addVideoInput()
+
+        self.session.commitConfiguration()
+        updateVideoConnection()
     }
 
     @IBAction func shotButtonTapped(_ sender: UIButton) {
@@ -226,30 +238,19 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var previewView: PreviewView!
 
-    private func configureSession() {
-        if self.setupResult != .success {
-            return
-        }
-        
-        session.beginConfiguration()
-        // .photo?
-        session.sessionPreset = .photo
-        
-        // Add video input.
+    private func addVideoInput() -> Bool {
         do {
             var defaultVideoDevice: AVCaptureDevice?
-            
-            // Choose the back dual camera if available, otherwise default to a wide angle camera.
-            if let dualCameraDevice = AVCaptureDevice.default(.builtInDualCamera, for: AVMediaType.video, position: .front) {
+            let position = devicePosition
+
+            if let dualCameraDevice = AVCaptureDevice.default(.builtInDualCamera, for: AVMediaType.video, position: position) {
                 defaultVideoDevice = dualCameraDevice
-            } else if let backCameraDevice = AVCaptureDevice.default(.builtInWideAngleCamera, for: AVMediaType.video, position: .front) {
-                defaultVideoDevice = backCameraDevice
-            } else if let frontCameraDevice = AVCaptureDevice.default(.builtInWideAngleCamera, for: AVMediaType.video, position: .front) {
-                defaultVideoDevice = frontCameraDevice
+            } else if let cameraDevice = AVCaptureDevice.default(.builtInWideAngleCamera, for: AVMediaType.video, position: position) {
+                defaultVideoDevice = cameraDevice
             }
-            
+
             let videoDeviceInput = try AVCaptureDeviceInput(device: defaultVideoDevice!)
-            
+
             if session.canAddInput(videoDeviceInput) {
                 session.addInput(videoDeviceInput)
                 self.videoDeviceInput = videoDeviceInput
@@ -257,18 +258,34 @@ class ViewController: UIViewController {
                 print("Could not add video device input to the session")
                 setupResult = .configurationFailed
                 session.commitConfiguration()
-                return
+
+                return false
             }
-            
         }
         catch {
             print("Could not create video device input: \(error)")
             setupResult = .configurationFailed
             session.commitConfiguration()
+
+            return false
+        }
+
+        return true
+    }
+
+    private func configureSession() {
+        if self.setupResult != .success {
             return
         }
         
-        // add output
+        session.beginConfiguration()
+        session.sessionPreset = .photo
+
+        let success = addVideoInput()
+        if (!success) {
+            return
+        }
+
         videoDataOutput = AVCaptureVideoDataOutput()
         videoDataOutput.videoSettings = [(kCVPixelBufferPixelFormatTypeKey as String): Int(kCVPixelFormatType_32BGRA)]
 
@@ -290,13 +307,19 @@ class ViewController: UIViewController {
         }
         
         session.commitConfiguration()
+        updateVideoConnection()
+    }
 
+    private func updateVideoConnection() {
         let connection = videoDataOutput.connection(with: .video)!
-        connection.isVideoMirrored = true
+        if (devicePosition == .front) {
+            connection.isVideoMirrored = true
+        }
+
         connection.videoOrientation = .portrait
     }
-    
-    func exifOrientationFromDeviceOrientation() -> UInt32 {
+
+    private func exifOrientationFromDeviceOrientation() -> UInt32 {
         enum DeviceOrientation: UInt32 {
             case top0ColLeft = 1
             case top0ColRight = 2
@@ -313,9 +336,9 @@ class ViewController: UIViewController {
         case .portraitUpsideDown:
             exifOrientation = .left0ColBottom
         case .landscapeLeft:
-            exifOrientation = devicePosition == .front ? .bottom0ColRight : .top0ColLeft
+            exifOrientation = devicePosition == .back ? .bottom0ColRight : .top0ColLeft
         case .landscapeRight:
-            exifOrientation = devicePosition == .front ? .top0ColLeft : .bottom0ColRight
+            exifOrientation = devicePosition == .back ? .top0ColLeft : .bottom0ColRight
         default:
             exifOrientation = .right0ColTop
         }
@@ -397,10 +420,11 @@ extension ViewController {
     
     func handleFaceLandmarks(request: VNRequest, error: Error?) {
         DispatchQueue.main.async {
-            //perform all the UI updates on the main queue
             guard let results = request.results as? [VNFaceObservation] else { return }
             self.previewView.removeMask()
+
             for face in results {
+                print(face)
                 self.previewView.drawFaceWithLandmarks(face: face)
             }
         }
@@ -471,7 +495,10 @@ extension ViewController: AVCapturePhotoCaptureDelegate {
             }
             
             let result = UIGraphicsGetImageFromCurrentImageContext()!
-            self.showEditView(image: result.withHorizontallyFlippedOrientation())
+
+            self.showEditView(
+                image: self.devicePosition == .front ? result.withHorizontallyFlippedOrientation() : result
+            )
 
             UIGraphicsEndImageContext()
         }
