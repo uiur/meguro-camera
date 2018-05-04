@@ -2,6 +2,7 @@ import UIKit
 import AVFoundation
 import Vision
 import Photos
+import TwitterKit
 
 class ViewController: UIViewController {
     // MARK: Session Management
@@ -93,6 +94,17 @@ class ViewController: UIViewController {
         
         captureControlView.isHidden = false
         editControlView.isHidden = true
+    }
+
+    @IBAction func tweetButtonTapped(_ sender: UIButton) {
+        guard let image = imageView.image else { return }
+
+        let composer = TWTRComposer()
+
+        composer.setText("#目黒カメラ")
+        composer.setImage(image)
+
+        composer.show(from: self)
     }
 
     @IBAction func saveButtonTapped(_ sender: UIButton) {

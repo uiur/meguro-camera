@@ -110,10 +110,10 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="147"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TkM-eT-l5m">
-                                                        <rect key="frame" x="0.0" y="0.0" width="183.5" height="147"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="119.5" height="147"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dvk-Bm-K2L">
-                                                                <rect key="frame" x="61.5" y="43.5" width="60" height="60"/>
+                                                                <rect key="frame" x="29.5" y="43.5" width="60" height="60"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="60" id="HvB-HF-IdE"/>
                                                                     <constraint firstAttribute="width" secondItem="Dvk-Bm-K2L" secondAttribute="height" multiplier="1:1" id="QB6-SY-naW"/>
@@ -132,10 +132,10 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gu6-6C-9bb">
-                                                        <rect key="frame" x="191.5" y="0.0" width="183.5" height="147"/>
+                                                        <rect key="frame" x="127.5" y="0.0" width="120" height="147"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LE9-k8-nZD">
-                                                                <rect key="frame" x="62" y="43" width="60" height="60"/>
+                                                                <rect key="frame" x="30.5" y="43" width="60" height="60"/>
                                                                 <color key="backgroundColor" red="0.34901960784313724" green="0.34901960784313724" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="60" id="SpJ-Rg-55G"/>
@@ -159,10 +159,29 @@
                                                             <constraint firstItem="LE9-k8-nZD" firstAttribute="centerX" secondItem="Gu6-6C-9bb" secondAttribute="centerX" id="iZ5-De-thm"/>
                                                         </constraints>
                                                     </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BQN-EA-SRX">
+                                                        <rect key="frame" x="255.5" y="0.0" width="119.5" height="147"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jRR-93-7XT">
+                                                                <rect key="frame" x="28" y="53" width="63" height="41"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                                                <state key="normal" title="Tweet"/>
+                                                                <connections>
+                                                                    <action selector="tweetButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LC3-7P-mBK"/>
+                                                                </connections>
+                                                            </button>
+                                                        </subviews>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstItem="jRR-93-7XT" firstAttribute="centerY" secondItem="BQN-EA-SRX" secondAttribute="centerY" id="Xoh-wF-GOt"/>
+                                                            <constraint firstItem="jRR-93-7XT" firstAttribute="centerX" secondItem="BQN-EA-SRX" secondAttribute="centerX" id="qds-DP-laD"/>
+                                                        </constraints>
+                                                    </view>
                                                 </subviews>
                                                 <constraints>
                                                     <constraint firstItem="Gu6-6C-9bb" firstAttribute="height" secondItem="oX4-71-R5W" secondAttribute="height" id="GXg-pR-wWf"/>
                                                     <constraint firstItem="TkM-eT-l5m" firstAttribute="height" secondItem="oX4-71-R5W" secondAttribute="height" id="lGS-Ti-RJj"/>
+                                                    <constraint firstItem="BQN-EA-SRX" firstAttribute="height" secondItem="oX4-71-R5W" secondAttribute="height" id="usL-RR-dEk"/>
                                                 </constraints>
                                             </stackView>
                                         </subviews>

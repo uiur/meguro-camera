@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3EA8BB92FC2653B50C9CBB67 /* Pods_MeguroCameraTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CBE2233E985059D78A4DB81 /* Pods_MeguroCameraTests.framework */; };
 		5500D4C820921B970039888F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5500D4BF20921B970039888F /* ViewController.swift */; };
 		5500D4C920921B970039888F /* PreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5500D4C020921B970039888F /* PreviewView.swift */; };
 		5500D4CA20921B970039888F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5500D4C120921B970039888F /* Assets.xcassets */; };
@@ -14,9 +15,11 @@
 		5500D4CC20921B970039888F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5500D4C420921B970039888F /* Main.storyboard */; };
 		5500D4CD20921B970039888F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5500D4C620921B970039888F /* AppDelegate.swift */; };
 		5500D4CE20921B970039888F /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5500D4C720921B970039888F /* Info.plist */; };
+		552AB96C209C9DD700BB6B4F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552AB96B209C9DD700BB6B4F /* Constants.swift */; };
 		55ED60152095869A0018CE56 /* MeguroCameraTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55ED60142095869A0018CE56 /* MeguroCameraTests.swift */; };
 		55ED601D209588A40018CE56 /* BlackLineDrawer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55ED601C209588A40018CE56 /* BlackLineDrawer.swift */; };
 		55ED6021209591440018CE56 /* BlackLineDrawerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55ED6020209591440018CE56 /* BlackLineDrawerTests.swift */; };
+		80C59DDF67B872A8633BBF47 /* Pods_MeguroCamera.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6A98DF9A8A22CD2EA95E3C5 /* Pods_MeguroCamera.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,11 +41,18 @@
 		5500D4C520921B970039888F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5500D4C620921B970039888F /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5500D4C720921B970039888F /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		552AB96B209C9DD700BB6B4F /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		55ED60122095869A0018CE56 /* MeguroCameraTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MeguroCameraTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		55ED60142095869A0018CE56 /* MeguroCameraTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeguroCameraTests.swift; sourceTree = "<group>"; };
 		55ED60162095869A0018CE56 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		55ED601C209588A40018CE56 /* BlackLineDrawer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlackLineDrawer.swift; sourceTree = "<group>"; };
 		55ED6020209591440018CE56 /* BlackLineDrawerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlackLineDrawerTests.swift; sourceTree = "<group>"; };
+		9CBE2233E985059D78A4DB81 /* Pods_MeguroCameraTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MeguroCameraTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A00A9EA01339F3EAE57D388B /* Pods-MeguroCamera.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MeguroCamera.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MeguroCamera/Pods-MeguroCamera.debug.xcconfig"; sourceTree = "<group>"; };
+		AC11AA69BE74260A9E694857 /* Pods-MeguroCameraTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MeguroCameraTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MeguroCameraTests/Pods-MeguroCameraTests.release.xcconfig"; sourceTree = "<group>"; };
+		B6A98DF9A8A22CD2EA95E3C5 /* Pods_MeguroCamera.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MeguroCamera.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C843685B46EAF7EFF5A13998 /* Pods-MeguroCameraTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MeguroCameraTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MeguroCameraTests/Pods-MeguroCameraTests.debug.xcconfig"; sourceTree = "<group>"; };
+		D1E9EF6F2398F69D6E686D24 /* Pods-MeguroCamera.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MeguroCamera.release.xcconfig"; path = "Pods/Target Support Files/Pods-MeguroCamera/Pods-MeguroCamera.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +60,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				80C59DDF67B872A8633BBF47 /* Pods_MeguroCamera.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -57,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3EA8BB92FC2653B50C9CBB67 /* Pods_MeguroCameraTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -69,6 +81,8 @@
 				5500D4BE20921B970039888F /* MeguroCamera */,
 				55ED60132095869A0018CE56 /* MeguroCameraTests */,
 				02611D911EEA5317009714B8 /* Products */,
+				1AB4F87A4660398E59C85062 /* Pods */,
+				14B20F056D7ADCD518DA78BC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -79,6 +93,26 @@
 				55ED60122095869A0018CE56 /* MeguroCameraTests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		14B20F056D7ADCD518DA78BC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B6A98DF9A8A22CD2EA95E3C5 /* Pods_MeguroCamera.framework */,
+				9CBE2233E985059D78A4DB81 /* Pods_MeguroCameraTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1AB4F87A4660398E59C85062 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A00A9EA01339F3EAE57D388B /* Pods-MeguroCamera.debug.xcconfig */,
+				D1E9EF6F2398F69D6E686D24 /* Pods-MeguroCamera.release.xcconfig */,
+				C843685B46EAF7EFF5A13998 /* Pods-MeguroCameraTests.debug.xcconfig */,
+				AC11AA69BE74260A9E694857 /* Pods-MeguroCameraTests.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 		5500D4BE20921B970039888F /* MeguroCamera */ = {
@@ -92,6 +126,7 @@
 				5500D4C620921B970039888F /* AppDelegate.swift */,
 				55ED601C209588A40018CE56 /* BlackLineDrawer.swift */,
 				5500D4C720921B970039888F /* Info.plist */,
+				552AB96B209C9DD700BB6B4F /* Constants.swift */,
 			);
 			path = MeguroCamera;
 			sourceTree = "<group>";
@@ -113,9 +148,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 02611DA21EEA5317009714B8 /* Build configuration list for PBXNativeTarget "MeguroCamera" */;
 			buildPhases = (
+				A63E40BE9821240B8E2D5D32 /* [CP] Check Pods Manifest.lock */,
 				02611D8C1EEA5317009714B8 /* Sources */,
 				02611D8D1EEA5317009714B8 /* Frameworks */,
 				02611D8E1EEA5317009714B8 /* Resources */,
+				BA4594AACE60DA4B5C512A7A /* [CP] Embed Pods Frameworks */,
+				2549FEB7C818BF10E8C9CA75 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -130,6 +168,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 55ED601B2095869A0018CE56 /* Build configuration list for PBXNativeTarget "MeguroCameraTests" */;
 			buildPhases = (
+				09AC7B7D5FE92A5E7DF8D33D /* [CP] Check Pods Manifest.lock */,
 				55ED600E2095869A0018CE56 /* Sources */,
 				55ED600F2095869A0018CE56 /* Frameworks */,
 				55ED60102095869A0018CE56 /* Resources */,
@@ -205,11 +244,91 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		09AC7B7D5FE92A5E7DF8D33D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MeguroCameraTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2549FEB7C818BF10E8C9CA75 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-MeguroCamera/Pods-MeguroCamera-resources.sh",
+				"${PODS_ROOT}/TwitterKit/iOS/TwitterKit.framework/TwitterKitResources.bundle",
+				"${PODS_ROOT}/TwitterKit/iOS/TwitterKit.framework/TwitterShareExtensionUIResources.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/TwitterKitResources.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/TwitterShareExtensionUIResources.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MeguroCamera/Pods-MeguroCamera-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A63E40BE9821240B8E2D5D32 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MeguroCamera-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BA4594AACE60DA4B5C512A7A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-MeguroCamera/Pods-MeguroCamera-frameworks.sh",
+				"${PODS_ROOT}/TwitterCore/iOS/TwitterCore.framework",
+				"${PODS_ROOT}/TwitterKit/iOS/TwitterKit.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TwitterCore.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TwitterKit.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MeguroCamera/Pods-MeguroCamera-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		02611D8C1EEA5317009714B8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				552AB96C209C9DD700BB6B4F /* Constants.swift in Sources */,
 				55ED601D209588A40018CE56 /* BlackLineDrawer.swift in Sources */,
 				5500D4CD20921B970039888F /* AppDelegate.swift in Sources */,
 				5500D4C820921B970039888F /* ViewController.swift in Sources */,
@@ -371,6 +490,7 @@
 		};
 		02611DA31EEA5317009714B8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A00A9EA01339F3EAE57D388B /* Pods-MeguroCamera.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -389,6 +509,7 @@
 		};
 		02611DA41EEA5317009714B8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D1E9EF6F2398F69D6E686D24 /* Pods-MeguroCamera.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -407,6 +528,7 @@
 		};
 		55ED60192095869A0018CE56 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C843685B46EAF7EFF5A13998 /* Pods-MeguroCameraTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ENABLE_OBJC_WEAK = YES;
@@ -425,6 +547,7 @@
 		};
 		55ED601A2095869A0018CE56 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AC11AA69BE74260A9E694857 /* Pods-MeguroCameraTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ENABLE_OBJC_WEAK = YES;
