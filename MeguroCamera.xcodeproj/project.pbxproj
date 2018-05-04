@@ -16,6 +16,7 @@
 		5500D4CD20921B970039888F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5500D4C620921B970039888F /* AppDelegate.swift */; };
 		5500D4CE20921B970039888F /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5500D4C720921B970039888F /* Info.plist */; };
 		552AB96C209C9DD700BB6B4F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552AB96B209C9DD700BB6B4F /* Constants.swift */; };
+		552AB973209CA37700BB6B4F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 552AB975209CA37700BB6B4F /* Localizable.strings */; };
 		55ED60152095869A0018CE56 /* MeguroCameraTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55ED60142095869A0018CE56 /* MeguroCameraTests.swift */; };
 		55ED601D209588A40018CE56 /* BlackLineDrawer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55ED601C209588A40018CE56 /* BlackLineDrawer.swift */; };
 		55ED6021209591440018CE56 /* BlackLineDrawerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55ED6020209591440018CE56 /* BlackLineDrawerTests.swift */; };
@@ -44,6 +45,8 @@
 		552AB96B209C9DD700BB6B4F /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		552AB96F209CA0BE00BB6B4F /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		552AB970209CA0BE00BB6B4F /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Main.strings; sourceTree = "<group>"; };
+		552AB974209CA37700BB6B4F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		552AB976209CA37B00BB6B4F /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
 		55ED60122095869A0018CE56 /* MeguroCameraTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MeguroCameraTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		55ED60142095869A0018CE56 /* MeguroCameraTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeguroCameraTests.swift; sourceTree = "<group>"; };
 		55ED60162095869A0018CE56 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -129,6 +132,7 @@
 				55ED601C209588A40018CE56 /* BlackLineDrawer.swift */,
 				5500D4C720921B970039888F /* Info.plist */,
 				552AB96B209C9DD700BB6B4F /* Constants.swift */,
+				552AB975209CA37700BB6B4F /* Localizable.strings */,
 			);
 			path = MeguroCamera;
 			sourceTree = "<group>";
@@ -213,6 +217,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ja,
 			);
 			mainGroup = 02611D871EEA5317009714B8;
 			productRefGroup = 02611D911EEA5317009714B8 /* Products */;
@@ -230,6 +235,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				552AB973209CA37700BB6B4F /* Localizable.strings in Resources */,
 				5500D4CE20921B970039888F /* Info.plist in Resources */,
 				5500D4CC20921B970039888F /* Main.storyboard in Resources */,
 				5500D4CA20921B970039888F /* Assets.xcassets in Resources */,
@@ -374,6 +380,15 @@
 				552AB970209CA0BE00BB6B4F /* ja */,
 			);
 			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		552AB975209CA37700BB6B4F /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				552AB974209CA37700BB6B4F /* en */,
+				552AB976209CA37B00BB6B4F /* ja */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

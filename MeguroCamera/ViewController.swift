@@ -133,7 +133,7 @@ class ViewController: UIViewController {
                 return
             }
 
-            let alertController = UIAlertController(title: nil, message: "画像をカメラロールに保存しました", preferredStyle: .alert)
+            let alertController = UIAlertController(title: nil, message: NSLocalizedString("saved", comment: ""), preferredStyle: .alert)
             alertController.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Alert OK button"), style: .cancel, handler: nil))
 
             self.present(alertController, animated: true, completion: nil)
